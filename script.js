@@ -29,7 +29,8 @@ function keyPressed() {
             break;
     }
 } 
-function draw() {
+
+function moveSnake() {
     switch (direction) {
         case "l": 
             x -= step;
@@ -44,6 +45,10 @@ function draw() {
             y += step;
             break;
     }
+}
+
+function draw() {
+    moveSnake();
 
     //zeichnet das spiel - drawing
     background(128, 128, 128);
