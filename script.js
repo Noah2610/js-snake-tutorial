@@ -14,20 +14,22 @@ function setup() {
     frameRate(framerate); //zwei mal pro Sekunde wird draw ausgeführt
 }
 function keyPressed() {
-    switch (String.fromCharCode(keyCode)) {
-        case "A": 
+    switch (String.fromCharCode(keyCode).toUpperCase()) {
+        case "A":
+            direction = "l";
+            break;
+        case "W":
+            direction = "u";
+            break;
+        case "S":
+            direction = "d";
+            break;
+        case "D":
+            direction = "r";
+            break;
     }
 } 
 function draw() {
-    if (keyIsDown(87)) { //87 ist w
-        direction = "u";
-    } else if (keyIsDown(65)) { //a
-        direction = "l";
-    } else if (keyIsDown(83)) { //s
-        direction = "d";
-    } else if (keyIsDown(68)) { //d 
-        direction = "r";
-    }
     switch (direction) {
         case "l": 
             x -= step;
