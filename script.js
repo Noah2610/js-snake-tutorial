@@ -78,33 +78,49 @@ function keyPressed() {
     // Check WASD
     switch (letter) {
         case "A":
-            snake.direction = DIR.LEFT;
-            return;
+            if (snake.direction != DIR.RIGHT) {
+                snake.direction = DIR.LEFT;
+                return;
+            }
         case "D":
-            snake.direction = DIR.RIGHT;
-            return;
+            if (snake.direction != DIR.LEFT) {
+                snake.direction = DIR.RIGHT;
+                return;
+            }
         case "W":
-            snake.direction = DIR.UP;
-            return;
+            if (snake.direction != DIR.DOWN) {
+                snake.direction = DIR.UP;
+                return;
+            }
         case "S":
-            snake.direction = DIR.DOWN;
-            return;
+            if (snake.direction != DIR.UP) {
+                snake.direction = DIR.DOWN;
+                return;
+            }
     }
 
     // Check arrow keys
     switch (keyCode) {
         case 37:
-            snake.direction = DIR.LEFT;
-            return;
+            if (snake.direction != DIR.RIGHT) {
+                snake.direction = DIR.LEFT;
+                return;
+            }
         case 39:
-            snake.direction = DIR.RIGHT;
-            return;
+            if (snake.direction != DIR.LEFT) {
+                snake.direction = DIR.RIGHT;
+                return;
+            }
         case 38:
-            snake.direction = DIR.UP;
-            return;
+            if (snake.direction != DIR.DOWN) {
+                snake.direction = DIR.UP;
+                return;
+            }
         case 40:
-            snake.direction = DIR.DOWN;
-            return;
+            if (snake.direction != DIR.UP) {
+                snake.direction = DIR.DOWN;
+                return;
+            }
     }
 }
 
