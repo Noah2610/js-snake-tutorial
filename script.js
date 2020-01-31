@@ -128,6 +128,10 @@ function moveSnakeHead() {
             snake.head.y += STEP;
             break;
     }
+
+    // Loop around
+    snake.head.x = (CANVAS_SIZE.w + snake.head.x) % CANVAS_SIZE.w;
+    snake.head.y = (CANVAS_SIZE.h + snake.head.y) % CANVAS_SIZE.h;
 }
 
 function moveSnakeParts() {
